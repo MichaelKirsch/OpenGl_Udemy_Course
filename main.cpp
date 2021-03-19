@@ -1,17 +1,16 @@
 #include <iostream>
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 
+
+#include "shitty_support_header/shitty_support.h"
+#include "glad/glad.h"
+#include <GLFW/glfw3.h>
 
 const GLint WIDTH = 800, HEIGHT = 700;
 
-int main() {
+using namespace ShittySupportLib;
 
-    if(!glfwInit())
-    {
-        std::cout << "OMG GLFW NOT WORKING !!1!!!" << std::endl;
-        glfwTerminate();
-    }
+int main() {
+    Debugger::instance().log("GLFW init",glfwInit());
     //set that shit to 3.3 -> mayor is first 3 minor is second 3
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,3);
@@ -20,24 +19,30 @@ int main() {
 
     GLFWwindow *mainWindow = glfwCreateWindow(WIDTH,HEIGHT,"Biatch",NULL,NULL);
     if(!mainWindow)
-    {
-        std::cout << "OMG Window NOT WORKING !!1!!!" << std::endl;
         glfwTerminate();
-    }
+
+    Debugger::instance().log("GLFW window init",mainWindow); //check if main window was created successfully
 
     //get buffer size information
     int bufferWidth, bufferHeight;
     glfwGetFramebufferSize(mainWindow,&bufferWidth,&bufferHeight);
     glfwMakeContextCurrent(mainWindow);
+    Debugger::instance().log("Window Buffers",std::string(" X:"+std::to_string(bufferWidth) + "| Y:" + std::to_string(bufferHeight)));
+    Debugger::instance().log("GLAD glfw loader function",gladLoadGLLoader((GLADloadproc) glfwGetProcAddress));
 
-    //allow modern extension features
-    glewExperimental = GL_TRUE;
+    glViewport(0,0,bufferWidth,bufferHeight);
+    Debugger::instance().log("Init of all Libs",1);
+    Debugger::instance().print_log();
+    Debugger::instance().clear_log();
 
-    if(!glewInit()){
-        std::cout << "OMG Window NOT WORKING !!1!!!" << std::endl;
-        glfwDestroyWindow(mainWindow);
-        glfwTerminate();
+    while (!glfwWindowShouldClose(mainWindow))
+    {
+        glfwPollEvents();
+        glClearColor(1.f,0.2,0.5,0.1);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glfwSwapBuffers(mainWindow);
     }
+
 
 
     return 0;
