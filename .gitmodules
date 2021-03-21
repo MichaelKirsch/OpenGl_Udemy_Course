@@ -4,3 +4,9 @@
 [submodule "include/imgui"]
 	path = include/imgui
 	url = https://github.com/ocornut/imgui
+[submodule "include/shitty_support_header"]
+	path = include/shitty_support_header
+	url = https://github.com/MichaelKirsch/shitty_support_header
+[submodule "include/GLFW"]
+	path = include/GLFW
+	url = https://github.com/glfw/glfw

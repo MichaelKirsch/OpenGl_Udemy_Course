@@ -1,5 +1,5 @@
 #include <iostream>
-#include "shitty_support_header/shitty_support.h"
+#include "shitty_support.h"
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <chrono>

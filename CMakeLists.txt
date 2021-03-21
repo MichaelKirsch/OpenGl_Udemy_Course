@@ -14,6 +14,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include/GLAD/include)
 add_subdirectory(include/GLFW)
+include_directories(include/shitty_support_header)
 
 
 
