@@ -1,7 +1,3 @@
-[submodule "shitty_support_header"]
-	path = shitty_support_header
-	url = https://github.com/MichaelKirsch/shitty_support_header
-
 [submodule "include/GLFW"]
 	path = include/GLFW
 	url = https://github.com/glfw/glfw
