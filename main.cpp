@@ -57,7 +57,7 @@ int main() {
     Debugger::instance().log("GLAD glfw loader function",gladLoadGLLoader((GLADloadproc) glfwGetProcAddress));
 
     glViewport(0,0,bufferWidth,bufferHeight);
-    Debugger::instance().log("Init of all Libs",1);
+    Debugger::instance().log("Init of all Libs", true);
     Debugger::instance().print_log();
     Debugger::instance().clear_log();
 
@@ -74,10 +74,6 @@ int main() {
             glfwSwapBuffers(mainWindow);
             std::this_thread::sleep_for(std::chrono::milliseconds(int(1000/Framerate)));
     }
-
-
-
-
 
 
 

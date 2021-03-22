@@ -1,9 +1,13 @@
 [submodule "shitty_support_header"]
 	path = shitty_support_header
 	url = https://github.com/MichaelKirsch/shitty_support_header
-[submodule "include/shitty_support_header"]
-	path = include/shitty_support_header
-	url = https://github.com/MichaelKirsch/shitty_support_header
+
 [submodule "include/GLFW"]
 	path = include/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "include/stb"]
+	path = include/stb
+	url = https://github.com/nothings/stb
+[submodule "include/sssh"]
+	path = include/sssh
+	url = https://github.com/MichaelKirsch/sssh
