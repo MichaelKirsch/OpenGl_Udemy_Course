@@ -57,7 +57,7 @@ int main() {
     Debugger::instance().log("GLAD glfw loader function",gladLoadGLLoader((GLADloadproc) glfwGetProcAddress));
 
     glViewport(0,0,bufferWidth,bufferHeight);
-    Debugger::instance().log("Init of all Libs", true);
+    Debugger::instance().logSuccess("Init of all Libs");
     Debugger::instance().print_log();
     Debugger::instance().clear_log();
 
