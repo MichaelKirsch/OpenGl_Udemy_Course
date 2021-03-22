@@ -75,7 +75,5 @@ int main() {
             std::this_thread::sleep_for(std::chrono::milliseconds(int(1000/Framerate)));
     }
 
-
-
     return 0;
 }
